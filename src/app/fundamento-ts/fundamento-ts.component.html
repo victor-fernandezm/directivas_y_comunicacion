@@ -1,0 +1,43 @@
+<label for="nombre">Nombre:</label><input type="text" id="nombre" [(ngModel)]="nombre"><br>
+<p>Operaciones:</p>
+<label for="pos">Posicion:</label><input type="number" id="pos" min="0" [max]="nombres.length-1" [(ngModel)]="idx"><br>
+<button (click)="setFnResult(addElement(nombre))">Añadir "{{nombre}}" a la lista</button><br>
+<button (click)="setFnResult(delElement(nombre))">Eliminar "{{nombre}}" de la lista</button><br>
+<button (click)="setFnResult(delElementAt(idx))">Eliminar posicion {{idx}} de la lista</button><br>
+<button (click)="setFnResult(getIndexOf(nombre))">Posicion de "{{nombre}}" en la lista</button><br>
+<button (click)="setFnResult(getElementAt(idx))">Recuperar elemento en la posicion {{idx}} de la lista</button><br>
+<button (click)="setFnResult(sortArray())">Ordena la lista</button><br>
+<p>Valor de la lista:</p>
+<pre>{{nombresString()}}</pre>
+
+<p>Resultado de la ejecucion:</p>
+<pre>{{fnResult}}</pre>
+<hr>
+<label for="logmsg">Mensaje a enviar al log:</label><input type="text" id="logmsg" [(ngModel)]="logmsg"><br>
+<button (click)="logInfo()">Log en nivel INFO</button>
+<button (click)="logWarning()">Log en nivel WARNING</button>
+<button (click)="logError()">Log en nivel ERROR</button>
+<button (click)="logFatal()">Log en nivel FATAL</button>
+<button (click)="logDebug()">Log en nivel DEBUG</button>
+
+<p>Log:</p>
+<pre>{{log}}</pre>
+<hr>
+<!-- Si escribimos en el input un valor no permitido, no va a ocurrir nada fuera de lo normal -->
+<!-- Esto se debe a que la union de valores solo se comprueba en el lado del typescript -->
+<!-- y no tiene nigun efecto en el html o el javascript. -->
+<!-- Solo fallaría si en el typescript comprobamos el tipo y -->
+<!-- decimos que tiene que ser uno de esos valores. (en este caso usamos el metodo indexof de un array con los valores) -->
+<label for="dofw">Introduzca un día de la semana:</label><input type="text" [(ngModel)]="dayOfWeek">
+<select name="" id="dofw" [(ngModel)]="dayOfWeek">
+    <option value="lunes">Lunes</option>
+    <option value="martes">Martes</option>
+    <option value="miercoles">Miercoles</option>
+    <option value="jueves">Jueves</option>
+    <option value="viernes">Viernes</option>
+    <option value="sabado">Sabado</option>
+    <option value="domingo">Domingo</option>
+</select>
+<button (click)="checkDayType()">Comprobar tipo</button>
+<p>Resultado de la comprobacion:</p>
+<pre>{{dayCheckResult}}</pre>
