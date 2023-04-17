@@ -1,0 +1,42 @@
+<label for="switch">Interruptor</label><input type="checkbox" id="switch" [(ngModel)]="switch"><br>
+<p>El interruptor esta
+    <span *ngIf="switch;else switch_off">
+        encendido <span style="color: #ff8000;">&#x2600;</span>
+    </span>
+    <ng-template #switch_off>
+        apagado <span style="color: #0008ff;">&#x2600;</span>
+    </ng-template>
+</p>
+
+<label for="productName">Nombre del Producto:</label><input type="text" id="productName" [(ngModel)]="actual[0]"><br>
+<label for="productQty">Cantidad del Producto:</label><input type="number" name="" id="productQty" [(ngModel)]="actual[1]"><br>
+<button (click)="addProduct(actual)">Añadir Producto</button><br>
+<table>
+    <tr>
+        <th *ngFor="let header of headers">{{header}}</th>
+        <th>Operaciones</th>
+    </tr>
+    <tr *ngFor="let pair of enumerate(data)">
+        <td *ngFor="let el of pair[1]">{{el}}</td>
+        <td><button (click)="deleteRow(pair[0])">&cross;</button></td>
+    </tr>
+</table>
+
+<label for="colors">Selecciona un color: </label>
+<select name="" id="colors" [(ngModel)]="color">
+    <option *ngFor="let colorvarl of enumAsArray()" value="{{colorvarl}}">{{colorvarl}}</option>
+</select>
+
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'RED'"><span style="color: #f00;">Seleccionaste rojo</span></div>
+    <div *ngSwitchCase="'GREEN'"><span style="color: #0a0;">Seleccionaste verde</span></div>
+    <div *ngSwitchCase="'BLUE'"><span style="color: #00f;">Seleccionaste azul</span></div>
+    <div *ngSwitchCase="'YELLOW'"><span style="color: #dd0;">Seleccionaste amarillo</span></div>
+    <div *ngSwitchCase="'CYAN'"><span style="color: #0dd;">Seleccionaste cian</span></div>
+    <div *ngSwitchCase="'MAGENTA'"><span style="color: #f0f;">Seleccionaste magenta</span></div>
+    <div *ngSwitchCase="'GRAY'"><span style="color: #888;">Seleccionaste gris</span></div>
+    <div *ngSwitchCase="'ORANGE'"><span style="color: #f80;">Seleccionaste naranja</span></div>
+    <div *ngSwitchCase="'TEAL'"><span style="color: #0d6;">Seleccionaste verde claro</span></div>
+    <div *ngSwitchCase="'PURPLE'"><span style="color: #808;">Seleccionaste morado</span></div>
+    <div *ngSwitchDefault>output2</div>
+</div>
