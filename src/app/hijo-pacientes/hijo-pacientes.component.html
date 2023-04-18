@@ -1,0 +1,7 @@
+<label for="nombre">Nombre: </label><input type="text" id="nombre" [(ngModel)]="currentPatient.nombre"><br>
+<label for="apellidos">Apellidos: </label><input type="text" id="apellidos" [(ngModel)]="currentPatient.apellidos"><br>
+<label for="dni">DNI: </label><input type="text" id="dni" [(ngModel)]="currentPatient.dni"><br>
+<label for="tlf">Telefono: </label><input type="text" id="tlf" [(ngModel)]="currentPatient.tlf"><br>
+<label for="direccion">Direccion: </label><input type="text" id="direccion" [(ngModel)]="currentPatient.direccion"><br>
+<label for="mail">Mail: </label><input type="text" id="mail" [(ngModel)]="currentPatient.mail"><br><br>
+<button (click)="addPatient()">Añadir paciente</button><br>

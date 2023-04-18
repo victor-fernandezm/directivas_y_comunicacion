@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Cedula</th>
+        <th>Foto</th>
+    </tr>
+    <tr *ngFor="let d of doctors">
+            <td>{{d.nombre}}</td>
+            <td>{{d.apellidos}}</td>
+            <td>{{d.cedula}}</td>
+            <td>{{d.foto}}</td>
+    </tr>
+</table>

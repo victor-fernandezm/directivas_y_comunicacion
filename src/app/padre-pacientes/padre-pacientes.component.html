@@ -1,0 +1,20 @@
+<app-hijo-pacientes (patientEvent)="recievePatientEvent($event)"></app-hijo-pacientes>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>DNI</th>
+        <th>Telefono</th>
+        <th>Direccion</th>
+        <th>Mail</th>
+    </tr>
+    <tr *ngFor="let p of patients">
+        <td>{{p.nombre}}</td>
+        <td>{{p.apellidos}}</td>
+        <td>{{p.dni}}</td>
+        <td>{{p.tlf ?? "N/A"}}</td>
+        <td>{{p.direccion ?? "N/A"}}</td>
+        <td>{{p.mail ?? "N/A"}}</td>
+    </tr>
+</table>

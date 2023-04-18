@@ -1,0 +1,9 @@
+<label for="nombre">Nombre: </label><input type="text" id="nombre" [(ngModel)]="currentDoctor.nombre"><br>
+<label for="apellidos">Apellidos: </label><input type="text" id="apellidos" [(ngModel)]="currentDoctor.apellidos"><br>
+<label for="cedula">Cedula: </label><input type="text" id="dni" [(ngModel)]="currentDoctor.cedula"><br>
+<label for="foto">Foto: </label><input type="text" id="tlf" [(ngModel)]="currentDoctor.foto"><br>
+<button (click)="addDoctor()">Añadir medico</button><br>
+
+<h2>Lista Pacientes</h2>
+
+<app-hijo-medico [doctors]="doctors"></app-hijo-medico>
